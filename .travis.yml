@@ -1,0 +1,9 @@
+sudo: required
+services: 
+  - docker
+
+before-install:
+  - docker build -t priyanka-oruganti/docker-react -f Dockerfile.dev .
+
+script:
+   - docker run priyanka-oruganti/docker-react npm run test -- --coverage
